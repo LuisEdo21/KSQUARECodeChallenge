@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "55eec296-76f6-43f3-9864-e08838a5c22b",
+		"name": "Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12458804"
+	},
+	"item": [
+		{
+			"name": "GET /tasks: Return a list of all tasks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJMdWlzRWRvXzIxIiwiZW1haWwiOiJsdWlzZWRvMjFAZ21haWwuY29tIiwicGhvbmUiOjMzMjAwOTQ0NDJ9LCJpYXQiOjE2ODAxMDI4NDF9.o0MoyRGRnKCDDhwgAKiCJO8HwgJURDn7zS0N77J3pVM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/tasks",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /tasks: Create a new task and return its information.",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJMdWlzRWRvXzIxIiwiZW1haWwiOiJsdWlzZWRvMjFAZ21haWwuY29tIiwicGhvbmUiOjMzMjAwOTQ0NDJ9LCJpYXQiOjE2ODAxMDI4NDF9.o0MoyRGRnKCDDhwgAKiCJO8HwgJURDn7zS0N77J3pVM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Deliver the challenge\",\r\n    \"description\": \"After finishing just deliver it!\",\r\n    \"dueDate\": \"2023-03-29\",\r\n    \"status\": \"In Progress\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/tasks",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /tasks/:id: Return information for a specific task by its ID.",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJMdWlzRWRvXzIxIiwiZW1haWwiOiJsdWlzZWRvMjFAZ21haWwuY29tIiwicGhvbmUiOjMzMjAwOTQ0NDJ9LCJpYXQiOjE2ODAxMDI4NDF9.o0MoyRGRnKCDDhwgAKiCJO8HwgJURDn7zS0N77J3pVM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/tasks/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT /tasks/:id: Update the information of a task by its ID.",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJMdWlzRWRvXzIxIiwiZW1haWwiOiJsdWlzZWRvMjFAZ21haWwuY29tIiwicGhvbmUiOjMzMjAwOTQ0NDJ9LCJpYXQiOjE2ODAxMDI4NDF9.o0MoyRGRnKCDDhwgAKiCJO8HwgJURDn7zS0N77J3pVM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Go to sleep\",\r\n    \"dueDate\": \"2023-03-29\",\r\n    \"status\": \"Completed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/tasks/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE /tasks/:id: Delete a task by its ID.",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Im5hbWUiOiJMdWlzRWRvXzIxIiwiZW1haWwiOiJsdWlzZWRvMjFAZ21haWwuY29tIiwicGhvbmUiOjMzMjAwOTQ0NDJ9LCJpYXQiOjE2ODAxMDI4NDF9.o0MoyRGRnKCDDhwgAKiCJO8HwgJURDn7zS0N77J3pVM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:3000/tasks/:id",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "11"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login with JSON Web Tokens (JWT)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
